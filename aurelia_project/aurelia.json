@@ -32,6 +32,7 @@
         "prepend": [
           "node_modules/bluebird/js/browser/bluebird.core.js",
           "node_modules/aurelia-cli/lib/resources/scripts/configure-bluebird.js",
+          "node_modules/whatwg-fetch/fetch.js",
           "node_modules/requirejs/require.js"
         ],
         "dependencies": [
@@ -56,6 +57,46 @@
           "aurelia-task-queue",
           "aurelia-templating",
           "aurelia-templating-binding",
+          "text",
+          "aurelia-fetch-client",
+          "aurelia-api",
+          "extend",
+          "aurelia-animator-css",
+          "jquery",
+          "jquery-validation",
+          {
+            "name": "aurelia-syncfusion-bridge",
+            "path": "../node_modules/aurelia-syncfusion-bridge/dist/amd",
+            "main": "index",
+            "resources": [
+              "grid/*.js"
+            ]
+          },
+          {
+            "name": "syncfusion-javascript",
+            "path": "../node_modules/syncfusion-javascript/",
+            "main": false,
+            "resources": [
+              "Content/ej/web/ej.widgets.core.bootstrap.min.css",
+              "Content/ej/web/bootstrap-theme/ej.theme.min.css",
+              "Content/ej/web/responsive-css/ej.responsive.css"
+            ]
+          },
+          {
+            "name": "jsrender",
+            "path": "../node_modules/jsrender/",
+            "main": "jsrender"
+          },
+          {
+            "name": "aurelia-authentication",
+            "path": "../node_modules/aurelia-authentication/dist/amd",
+            "main": "aurelia-authentication"
+          },
+          {
+            "name": "jwt-decode",
+            "path": "../node_modules/jwt-decode/lib",
+            "main": "index"
+          },
           {
             "name": "aurelia-templating-resources",
             "path": "../node_modules/aurelia-templating-resources/dist/amd",
@@ -142,5 +183,10 @@
   "testFramework": {
     "id": "jasmine",
     "displayName": "Jasmine"
+  },
+  "copyFiles": {
+    "./assets/**/*": "../dist",
+    "node_modules/syncfusion-javascript/Content/ej/web/common-images/**/*": "common-images",
+    "node_modules/syncfusion-javascript/Content/ej/web/bootstrap-theme/images/**": "images"
   }
 }
